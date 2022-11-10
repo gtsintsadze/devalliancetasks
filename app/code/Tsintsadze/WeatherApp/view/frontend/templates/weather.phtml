@@ -1,0 +1,61 @@
+<?php
+/** @var Tsintsadze\WeatherApp\Block\Weather $block */
+
+$city = $block->getCity();
+$block->getWeatherData();
+?>
+
+
+<style>
+    th {
+        font-size: 10px;
+    }
+
+    td {
+        font-size: 10px;
+    }
+
+    th, td {
+        padding: 2px;
+    }
+
+    table, th, td {
+        border: 1px solid;
+        border-collapse: collapse;
+    }
+    label {
+        font-size: 20px;
+    }
+    ul {
+        padding-left: 20px;
+    }
+</style>
+<h1><?= __("Weather in your city.") ?></h1>
+<form action="<?= $block->getPostUrl()?>" method="post">
+    <label for="city">
+        <?= __("CITY") ?>
+    </label>
+    <input type="text" id="city" name="city">
+    <button>submit</button>
+</form>
+<div>
+    <ul>
+        <li>City: <?= $city ?> </li>
+        <li>Country: <?= $block->getCountry() ?></li>
+        <li>Description: <?= $block->getDescription() ?> </li>
+        <li>Temperature (°C): <?= $block->getTemperature() ?> </li>
+        <li>Feels Like (°C): <?= $block->getFeelsLike() ?></li>
+        <li>Pressure (hPa): <?= $block->getPressure() ?></li>
+        <li>Humidity (%): <?= $block->getHumidity() ?></li>
+        <li>Wind Speed (meter/sec): <?= $block->getWindSpeed() ?></li>
+        <li>Sunrise (UTC): <?= $block->getSunRiseFormatted() ?></li>
+        <li>Sunset (UTC): <?= $block->getSunsetFormatted() ?></li>
+    </ul>
+</div>
+
+<div>
+
+    <form action="/weather/posted/topdf">
+        <button><?=__("Print All")?></button>
+    </form>
+</div>

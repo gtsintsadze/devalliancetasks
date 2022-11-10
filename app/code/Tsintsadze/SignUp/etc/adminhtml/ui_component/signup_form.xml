@@ -1,0 +1,5 @@
+<fieldset name="%fieldset_name%">
+    <argument name="data" xsi:type="array">
+        <item name="disabled" xsi:type="boolean">true</item>
+    </argument>
+</fieldset>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Tsintsadze_SignUp::signup"
+             title="Signup"
+             module="Tsintsadze_SignUp"
+             resource="Tsintsadze_SignUp::visibility"
+             parent="Magento_Customer::customer"
+             sortOrder="200"/>
+
+        <add id="Tsintsadze_SignUp::config"
+             title="Signup Grid"
+             module="Tsintsadze_SignUp"
+             resource="Tsintsadze_SignUp::visibility"
+             parent="Tsintsadze_SignUp::signup"
+             action="signup/index/index"/>
+    </menu>
+</config>

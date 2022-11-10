@@ -1,0 +1,15 @@
+<?php
+/** @var SignUp $block */
+use Tsintsadze\SignUp\Block\SignUp;
+?>
+
+<?php if ($block->formIsVisible()) :  ?>
+    <div>
+        <form action="/signup/posted" method="post">
+            <label for="name">First name:</label><br>
+            <input type="text" id="name" name="name"><br><br>
+            <input type="date" onfocus="this.showPicker()" id="date" name="date"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+<?php endif;?>

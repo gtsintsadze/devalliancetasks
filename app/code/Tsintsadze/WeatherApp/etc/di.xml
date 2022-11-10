@@ -1,0 +1,17 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Tsintsadze\WeatherApp\Api\WeatherRepositoryInterface" type="Tsintsadze\WeatherApp\Model\ResourceModel\WeatherRepository"/>
+    <preference for="Tsintsadze\WeatherApp\Api\Data\WeatherInterface" type="Tsintsadze\WeatherApp\Model\Weather"/>
+    <virtualType name="WeatherDataCollection" type="Tsintsadze\WeatherApp\Ui\DataProvider\WeatherData\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">weather_data</argument>
+            <argument name="resourceModel" xsi:type="string">Tsintsadze\WeatherApp\Model\ResourceModel\Weather</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="tsintsadze_weatherapp_weather_data_grid_data_source" xsi:type="string">WeatherDataCollection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

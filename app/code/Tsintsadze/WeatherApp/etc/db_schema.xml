@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="weather_data">
+        <column name="id" xsi:type="int" nullable="false" identity="true"/>
+        <column name="city" xsi:type="varchar" length="90" nullable="true"/>
+        <column name="country" xsi:type="varchar" length="56" nullable="true"/>
+        <column name="description" xsi:type="varchar" length="64" nullable="true"/>
+        <column name="temperature" xsi:type="varchar" length="64" nullable="true"/>
+        <column name="feels_like" xsi:type="varchar" length="64" nullable="true"/>
+        <column name="pressure" xsi:type="varchar" length="64" nullable="true"/>
+        <column name="humidity" xsi:type="varchar" length="64" nullable="true"/>
+        <column name="wind_speed" xsi:type="varchar" length="64" nullable="true"/>
+        <column name="sun_rise" xsi:type="datetime"  nullable="true"/>
+        <column name="sun_set" xsi:type="datetime"  nullable="true"/>
+        <column name="created_at" xsi:type="datetime" default="CURRENT_TIMESTAMP" nullable="false"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>
