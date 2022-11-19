@@ -95,7 +95,7 @@ class AddLinkedin implements DataPatchInterface
 
     public function revert()
     {
-        
+
     }
 }
 
